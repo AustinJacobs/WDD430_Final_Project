@@ -9,7 +9,9 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./house-list.component.css'],
 })
 export class HouseListComponent implements OnInit {
-  houses: House[] = [];
+  houses: House[] = [
+    new House('$500,000', '11-25-1997', '6339 N 2nd St Tetonia, Idaho 83452', 'Single Family Dwelling', '1997', '3,097', '$188', 'Yes', 'This is a really nice house.', '200', 'https://www.zillow.com/homedetails/4415-Greenwillow-Ln-Idaho-Falls-ID-83401/2140366302_zpid/'),
+  ];
 
   private subscription: Subscription;
 
