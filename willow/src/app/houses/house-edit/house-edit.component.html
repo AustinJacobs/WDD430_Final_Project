@@ -1,0 +1,187 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <form id="house-edit" #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="price">House Price:</label>
+          <input
+            [ngModel]="house?.price"
+            #name="ngModel"
+            name="price"
+            type="text"
+            id="price"
+            class="form-control"
+            size="120"
+            max="120"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="propertyDescription">House Description:</label>
+          <input
+            [ngModel]="house?.propertyDescription"
+            name="propertyDescription"
+            type="text"
+            id="propertyDescription"
+            class="form-control"
+            size="120"
+            max="255"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="listDate">House Listing:</label>
+          <input
+            [ngModel]="house?.listDate"
+            name="listDate"
+            type="text"
+            id="listDate"
+            class="form-control"
+            size="120"
+            max="255"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="address">House Address:</label>
+          <input
+            [ngModel]="house?.address"
+            name="address"
+            type="text"
+            id="address"
+            class="form-control"
+            size="120"
+            max="255"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="residenceType">House Type:</label>
+          <input
+            [ngModel]="house?.residenceType"
+            name="residenceType"
+            type="text"
+            id="residenceType"
+            class="form-control"
+            size="120"
+            max="255"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="yearBuilt">House Build-date:</label>
+          <input
+            [ngModel]="house?.yearBuilt"
+            name="yearBuilt"
+            type="text"
+            id="yearBuilt"
+            class="form-control"
+            size="120"
+            max="255"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="sqFeet">House Square Footage:</label>
+          <input
+            [ngModel]="house?.sqFeet"
+            name="sqFeet"
+            type="text"
+            id="sqFeet"
+            class="form-control"
+            size="120"
+            max="255"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="pricePerSqFeet">House Price Per Square Foot:</label>
+          <input
+            [ngModel]="house?.pricePerSqFeet"
+            name="pricePerSqFeet"
+            type="text"
+            id="pricePerSqFeet"
+            class="form-control"
+            size="120"
+            max="255"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="availability">House Availability:</label>
+          <input
+            [ngModel]="house?.availability"
+            name="availability"
+            type="text"
+            id="availability"
+            class="form-control"
+            size="120"
+            max="255"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="lengthTimeListed">House Days Listed:</label>
+          <input
+            [ngModel]="house?.lengthTimeListed"
+            name="lengthTimeListed"
+            type="text"
+            id="lengthTimeListed"
+            class="form-control"
+            size="120"
+            max="255"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="url">House URL:</label>
+          <input
+            [ngModel]="house?.url"
+            name="url"
+            type="text"
+            id="url"
+            class="form-control"
+            size="120"
+            max="255"
+          />
+        </div>
+      </div>
+
+      <!-- <div class="alert alert-danger" *ngIf="!name.valid || !houseUrl.valid">
+        The Document Title and Document URL are required.
+      </div> -->
+
+      <div class="row">
+        <div class="col-xs-12 btn-toolbar">
+          <button class="btn btn-success" type="submit" [disabled]="!f.valid">
+            Save
+          </button>
+          <button class="btn btn-primary" type="button" (click)="onCancel()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
