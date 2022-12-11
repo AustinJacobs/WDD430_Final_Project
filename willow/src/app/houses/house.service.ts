@@ -30,19 +30,23 @@ export class HouseService {
   getHouses() {
     this.http
       .get<{ message: string; houses: House[] }>(
-        'http://localhost:3000/documents/'
+        'http://localhost:3000/houses/'
       )
-      .subscribe({
-        next: (response) => {
-          console.log(response.message);
-          this.houses = response.houses;
-          this.sortAndSend();
-        },
-        error: (error) => {
-          console.error(error.message);
-          console.error(error.error);
-        },
-      });
+      // .subscribe((houseData) => {
+      //   this.houses = houseData.houses;
+      //   this.sortAndSend();
+      // });
+    .subscribe({
+      next: (response) => {
+        console.log(response.message);
+        this.houses = response.houses;
+        this.sortAndSend();
+      },
+      error: (error) => {
+        console.error(error.message);
+        console.error(error.error);
+      },
+    });
   }
 
   getHouse(id: string): House {
@@ -115,9 +119,7 @@ export class HouseService {
     const pos = this.houses.indexOf(house);
     if (pos < 0) return;
     this.http
-      .delete<{ message: string }>(
-        'http://localhost:3000/houses/' + house.id
-      )
+      .delete<{ message: string }>('http://localhost:3000/houses/' + house.id)
       .subscribe({
         next: (response) => {
           console.log(response.message);
